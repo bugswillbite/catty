@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Text</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .animated-text {
+      display: none;
+      font-size: 24px;
+      text-align: center;
+      animation-duration: 60s;
+      animation-fill-mode: both;
+    }
+
+    .fade-in {
+      animation-name: fadeIn;
+    }
+
+    .pop-up {
+      animation-name: popUp;
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-text pop-up" id="line1">this cat is hangry!!</div>
+  <div class="animated-text pop-up" id="line2">click the jar to release a treat!</div>
+  <div class="animated-text pop-up" id="line3"> click the treat and bring it <br>to the cat to make him happy! </div>
+  <div class="animated-text fade-in" id="combinedText">this cat is hangry!! click the <br>jar to release a treat! click the treat and <br>bring it to the cat to make him happy! </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const line1 = document.getElementById("line1");
+      const line2 = document.getElementById("line2");
+      const line3 = document.getElementById("line3");
+      const combinedText = document.getElementById("combinedText");
+
+      setTimeout(() => {
+        line1.style.display = "block";
+        setTimeout(() => {
+          line1.style.display = "none";
+          line2.style.display = "block";
+          setTimeout(() => {
+            line2.style.display = "none";
+            line3.style.display = "block";
+            setTimeout(() => {
+              line3.style.display = "none";
+              combinedText.style.display = "block";
+            }, 2000); // Adjust the delay as needed
+          }, 2000); // Adjust the delay as needed
+        }, 2000); // Adjust the delay as needed
+      }, 2000); // Adjust the delay as needed
+    });
+  </script>
+</body>
+</html>
