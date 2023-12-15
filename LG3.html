@@ -27,7 +27,7 @@
             max-width: 99.7%;
             height: auto;
             margin-top: 600px;
-            opacity: 1; /* Initial opacity set to 100% */
+            opacity: 1;
             transition: opacity 1s ease-in-out;
         }
 
@@ -45,7 +45,7 @@
             margin-top: 30px;
             font-size: 1.5em;
             font-family: 'Courier New', Courier, monospace;
-            z-index: 1; /* Ensure the text is on top */
+            z-index: 1; 
         }
 
         #texty {
@@ -53,7 +53,7 @@
             display: none;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            z-index: 1; /* Ensure the text is on top */
+            z-index: 1; 
         }
 
         #both {
@@ -91,17 +91,17 @@
     <button id="optionA" onclick="chooseOption('A')"><b>yeah!</b></button><br>
     
     <script>
-        // Optional: You can set a timeout to delay the fade-out effect
+        
         setTimeout(() => {
             fadeOut(document.getElementById('back'));
-        }, 1000); // Adjust the timing as needed (in milliseconds)
+        }, 1000); 
 
-        // Call showImage function when the page loads
+        
         window.onload = function () {
             showImage();
         };
 
-        // Define optionA and optionB globally
+    
         const optionA = document.getElementById('optionA');
         const optionB = document.getElementById('optionB');
         const optionC = document.getElementById('optionC');
@@ -110,13 +110,12 @@
             const image = document.getElementById('image');
             const text = document.getElementById('text');
 
-            // Show and fade in the image
+          
             fadeIn(image);
 
-            // Show and fade in the text with a slower speed
-            fadeIn(text, 600); // Adjust the timing (in milliseconds)
-
-            // Show and fade in the buttons
+           
+            fadeIn(text, 600); 
+            
             fadeIn(optionA, 600);
             fadeIn(optionB, 600);
             fadeIn(optionC, 600);
@@ -140,7 +139,7 @@
                 optionB.style.display = 'block';
                 optionC.style.display = 'block';
 
-            }, 5000); // Adjust the timing as needed (in milliseconds)
+            }, 5000); 
         }
 
         function fadeOut(element, intervalSpeed = 200) {
@@ -151,7 +150,7 @@
                     clearInterval(fadeEffect);
                     element.style.display = 'none';
 
-                    // Fade in the next image
+                   
                     const nextImage = document.getElementById('image');
                     fadeIn(nextImage);
                 }
@@ -159,9 +158,7 @@
         }
 
         function chooseOption(option) {
-            // Handle the chosen option here
-
-            // Redirect to another page based on the chosen option
+            
             if (option === 'A') {
                 window.location.href = 'pageC.html';
             } else if (option === 'B') {
