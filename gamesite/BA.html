@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>≽ܫ≼mysa≽ܫ≼</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        button{
+            font-size: 1.5em;
+            cursor: pointer;
+            font-family: "Courier New";
+        }
+    
+        #back {
+            max-width: 99.7%;
+            height: auto;
+            margin-top: 600px;
+            opacity: 1; /* Initial opacity set to 100% */
+            transition: opacity 1s ease-in-out;
+        }
+
+        #image {
+            display: none;
+            max-width: 600px;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            margin-left: 10px;
+        }
+
+        #text {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 1; /* Ensure the text is on top */
+        }
+
+        #texty {
+            position: absolute;
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1; /* Ensure the text is on top */
+        }
+
+        #both {
+            position: relative;
+            width: 40%;
+        }
+        #optionA {
+            position: absolute;
+            margin-top: 470px;
+            margin-left: 355px;
+            font-size: 30px;
+            display: none;
+        }
+        #optionB {
+            position: absolute;
+            margin-top: 470px;
+            margin-left: 10px;
+            font-size: 30px;
+            display: none;
+        }
+        #optionC {
+            position: absolute;
+            margin-top: 470px;
+            margin-left: 380px;
+            font-size: 30px;
+            display: none ;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="back" src="br.png" alt="Background Image">
+    <div id="both"></div>
+    <img id="image" src="yay.png" alt="Displayed Image">
+    <button id="optionA" onclick="chooseOption('A')"><b>let's go!</b></button><br>
+    
+    <script>
+        // Optional: You can set a timeout to delay the fade-out effect
+        setTimeout(() => {
+            fadeOut(document.getElementById('back'));
+        }, 1000); // Adjust the timing as needed (in milliseconds)
+
+        // Call showImage function when the page loads
+        window.onload = function () {
+            showImage();
+        };
+
+        // Define optionA and optionB globally
+        const optionA = document.getElementById('optionA');
+        const optionB = document.getElementById('optionB');
+        const optionC = document.getElementById('optionC');
+
+        function showImage() {
+            const image = document.getElementById('image');
+            const text = document.getElementById('text');
+
+            // Show and fade in the image
+            fadeIn(image);
+
+            // Show and fade in the text with a slower speed
+            fadeIn(text, 600); // Adjust the timing (in milliseconds)
+
+            // Show and fade in the buttons
+            fadeIn(optionA, 600);
+            fadeIn(optionB, 600);
+            fadeIn(optionC, 600);
+
+        }
+
+        function fadeIn(element, intervalSpeed = 200) {
+            element.style.display = 'block';
+            element.style.opacity = 0;
+
+            const fadeEffect = setInterval(function () {
+                if (element.style.opacity < 1) {
+                    element.style.opacity = parseFloat(element.style.opacity) + 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, intervalSpeed);
+
+            setTimeout(function () {
+                optionA.style.display = 'block';
+                optionB.style.display = 'block';
+                optionC.style.display = 'block';
+
+            }, 5000); // Adjust the timing as needed (in milliseconds)
+        }
+
+        function fadeOut(element, intervalSpeed = 200) {
+            const fadeEffect = setInterval(function () {
+                if (element.style.opacity > 0) {
+                    element.style.opacity = parseFloat(element.style.opacity) - 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                    element.style.display = 'none';
+
+                    // Fade in the next image
+                    const nextImage = document.getElementById('image');
+                    fadeIn(nextImage);
+                }
+            }, intervalSpeed);
+        }
+
+        function chooseOption(option) {
+            // Handle the chosen option here
+
+            // Redirect to another page based on the chosen option
+            if (option === 'A') {
+                window.location.href = 'LG1.html';
+            } else if (option === 'B') {
+                window.location.href = 'LG1.html';
+            } else if (option === 'C') {
+                window.location.href = 'LG1.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
