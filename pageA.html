@@ -23,13 +23,13 @@
             cursor: pointer;
             font-family: "Courier New";
         }
-        #back {
+       /*  #back {
             max-width: 100%;
             height: auto;
             margin-top: 700px;
             opacity: 100; /* Initial opacity set to 100% */
-            transition: opacity 1s ease-in-out;
-        }
+          /*  transition: opacity 1s ease-in-out;
+        } */
 
         #image {
             display: none;
@@ -85,8 +85,8 @@
 </head>
 <body>
 
-    <img id="back" src="back.png" alt="Background Image">
-    <div id="both"></div>
+   <!-- <img id="back" src="back.png" alt="Background Image">
+    <div id="both"></div> -->
     <img id="image" src="helloz.png" alt="Displayed Image">
     <button id="optionA" onclick="chooseOption('A')"><b>okay...</b></button><br>
     <button id="optionB" onclick="chooseOption('B')"><b>cool!</b></button>
@@ -142,23 +142,23 @@
                 optionB.style.display = 'block';
                 optionC.style.display = 'block';
 
-            }, 15000); // Adjust the timing as needed (in milliseconds)
+            }, 1000); // Adjust the timing as needed (in milliseconds)
         }
 
-        function fadeOut(element, intervalSpeed = 200) {
-            const fadeEffect = setInterval(function () {
-                if (element.style.opacity > 0) {
-                    element.style.opacity = parseFloat(element.style.opacity) - 0.1;
-                } else {
-                    clearInterval(fadeEffect);
-                    element.style.display = 'none';
+    //    function fadeOut(element, intervalSpeed = 200) {
+      //      const fadeEffect = setInterval(function () {
+        //        if (element.style.opacity > 0) {
+          //          element.style.opacity = parseFloat(element.style.opacity) - 0.1;
+            //    } else {
+              //      clearInterval(fadeEffect);
+                //    element.style.display = 'none';
 
                     // Fade in the next image
-                    const nextImage = document.getElementById('image');
-                    fadeIn(nextImage);
-                }
-            }, intervalSpeed);
-        }
+                  //  const nextImage = document.getElementById('image');
+                    //fadeIn(nextImage);
+               // }
+          //  }, intervalSpeed);
+       // }
 
         function chooseOption(option) {
             // Handle the chosen option here
