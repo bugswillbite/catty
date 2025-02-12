@@ -76,13 +76,6 @@
             margin-top: 400px;
             cursor: pointer;
         }
-        #back {
-            max-width: 99.7%;
-            height: auto;
-            margin-top: 40px;
-            opacity: 1; 
-            transition: opacity 1s ease-in-out;
-        }
 
         #image {
             display: none;
@@ -114,7 +107,7 @@
     </style>
 </head>
 <body>
-    <img id="back" src="creep.png" alt="Background Image">
+  <!--  <img id="back" src="creep.png" alt="Background Image"> -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="container">
         <img id="largeImage" src="DRESS1.png" alt="Large Image">
@@ -132,9 +125,9 @@
             largeImage.src = imagePath;
         }
      
-     setTimeout(() => {
-            fadeOut(document.getElementById('back'));
-        }, 1000); 
+    // setTimeout(() => {
+      //      fadeOut(document.getElementById('back'));
+        //}, 1000); 
         
         window.onload = function () {
             showImage();
