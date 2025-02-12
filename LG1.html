@@ -23,13 +23,7 @@
             cursor: pointer;
             font-family: "Courier New";
         }
-        #back {
-            max-width: 99.7%;
-            height: auto;
-            margin-top: 600px;
-            opacity: 1; 
-            transition: opacity 1s ease-in-out;
-        }
+        
 
         #image {
             display: none;
@@ -85,7 +79,6 @@
 </head>
 <body>
 
-    <img id="back" src="heart.png" alt="Background Image">
     <div id="both"></div>
     <img id="image" src="clothes.png" alt="Displayed Image">
     <button id="optionA" onclick="chooseOption('A')"><b>yeah!</b></button><br>
@@ -141,21 +134,7 @@
             }, 5000); 
         }
 
-        function fadeOut(element, intervalSpeed = 200) {
-            const fadeEffect = setInterval(function () {
-                if (element.style.opacity > 0) {
-                    element.style.opacity = parseFloat(element.style.opacity) - 0.1;
-                } else {
-                    clearInterval(fadeEffect);
-                    element.style.display = 'none';
-
-                    
-                    const nextImage = document.getElementById('image');
-                    fadeIn(nextImage);
-                }
-            }, intervalSpeed);
-        }
-
+     
         function chooseOption(option) {
             
             if (option === 'A') {
